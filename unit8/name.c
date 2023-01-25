@@ -11,13 +11,13 @@
  * @author Ken Loomis
  */
 int main(void)
-{
+{	
 	int count, length;
-    string name = get_string( "Enter your name: " );
-    length = strlen ( name );
-    for(count = 0; count < length; count++)
-    {
-    	printf ( "%c\n", name[count] );
-    }
-
+	string name = get_string( "Enter your name: " );
+	length = strlen ( name );
+	for(count = 0; count < length; count++)
+	{
+		printf ( "%c\n", name[count] );
+	}
+	return 0;
 }
