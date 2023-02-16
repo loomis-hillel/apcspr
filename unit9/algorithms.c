@@ -6,7 +6,7 @@
 
 // Switch this to true to see each element during the search
 const bool VERBOSE = false;
-
+const int SEARCHES = 5;
 const long MAX_ARRAY = 1000000;
 
 
@@ -34,7 +34,6 @@ void print_array ( long array[], long size );
  */
 int main ( void ) {
     long array [MAX_ARRAY];
-
     long size = 0;
     int type = 0;
 
@@ -145,12 +144,17 @@ void bail ( string msg ) {
  * Displays the results and runtime of the given search algorithm.
  */
 void calculate_search_time ( long (* function)(long, long[], long), long target, long array[], long size ) {
-    clock_t t = clock();
-    long loc = (*function) ( target, array, size);
-    t = clock() - t;
-    long time_taken = ( (long) t ); // CLOCKS_PER_SEC;
-    printf("\tThe value %li was found at index %li\n", target, loc);
-    printf("\tThe search took %li ms to execute\n", time_taken);
+    unsigned long sum = 0;
+    for ( int i = 0; i < SEARCHES; i++ ) {
+        clock_t t = clock();
+        long loc = (*function) ( target, array, size);
+        t = clock() - t;
+        long time_taken = ( (long) t ); // CLOCKS_PER_SEC;
+        sum += time_taken;
+        printf("\tThe value %li was found at index %li\n", target, loc);
+    }
+    double time_taken_d = sum/(double) SEARCHES;
+    printf("\tThe search took %0.1lf ms on average to execute\n", time_taken_d);
 }
 
 /**
