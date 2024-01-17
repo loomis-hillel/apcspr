@@ -10,7 +10,7 @@
 int main(void)
 {	
 	int value = 0;
-    int bitVal = 1;
+	int bitVal = 1;
 	string bitstring = get_string( "Enter a binary number: " );
 	int length = strlen ( bitstring );
 	for ( int i=length-1; i >= 0; i-- ) {
@@ -20,6 +20,6 @@ int main(void)
 		bitVal = bitVal * 2;
 	}
 
-    printf ( "%i\n", value );
+	printf ( "%i\n", value );
 	return 0;
 }
