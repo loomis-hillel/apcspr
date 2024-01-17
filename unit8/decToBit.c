@@ -2,6 +2,8 @@
 #include <cs50.h>
 #include <string.h>
 
+const int BIT_SIZE = 32;
+
 /**
  * This converts a number from a positive decimal (whole number)
  * To a binary number (bitstring). 
@@ -13,13 +15,13 @@ int main(void)
     int bitVal;
     // Create a string that has room for 32 characters (+ the terminating
     // character).
-	char bitstring [33];
+	char bitstring [BIT_SIZE+1];
     // Fill the array with 0s
-    for ( int i =0; i<32; i++ ){
+    for ( int i =0; i<BIT_SIZE; i++ ){
         bitstring[i] = '0';
     } 
     // Put a the terminating character at the end of the array.
-    bitstring[32] = '\0';
+    bitstring[BITS] = '\0';
     // As long as there are still bits needed to make up the
     // bitstring, keep dividing. Built the bitstring from
     // the right to the left.
