@@ -9,7 +9,7 @@
  */
 int main(void)
 {	
-	int value = get_int( "Enter a whole number: " );
+    int value = get_int( "Enter a whole number: " );
     int bitVal;
     // Create a string that has room for 32 characters (+ the terminating
     // character).
@@ -23,13 +23,7 @@ int main(void)
     // As long as there are still bits needed to make up the
     // bitstring, keep dividing. Built the bitstring from
     // the right to the left.
-    int pos = 31;
-    while ( value > 0 ) {
-        bitVal = value % 2;
-        bitstring[pos] = bitVal+'0';
-        pos--;
-        value = value / 2;
-    }
+
     // Print it when you are done.
     printf ( "%s\n", bitstring );
 	return 0;
