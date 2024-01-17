@@ -21,7 +21,7 @@ int main(void)
         bitstring[i] = '0';
     } 
     // Put a the terminating character at the end of the array.
-    bitstring[BITS] = '\0';
+    bitstring[BIT_SIZE] = '\0';
     // As long as there are still bits needed to make up the
     // bitstring, keep dividing. Built the bitstring from
     // the right to the left.
