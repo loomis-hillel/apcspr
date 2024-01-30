@@ -34,7 +34,7 @@ int main ( void ) {
     } else {
         loc = binary_search (target, pets, size);
     }
-    if ( loc > 0 ) {
+    if ( loc >= 0 ) {
         printf ( "%s at location %i\n", target, loc );
     } else {
         printf ( "%s is not in the array\n", target );
